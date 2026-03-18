@@ -4,6 +4,7 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import Button from '../components/Button';
 import Card from '../components/Card';
+import heroImage from '../assets/hero.png';
 
 const Home = () => {
   const services = [
@@ -50,7 +51,14 @@ const Home = () => {
       
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-navy/90 via-navy/70 to-navy/90 z-10"></div>
+        <div className="absolute inset-0">
+          <img 
+            src={heroImage} 
+            alt="Calvin's Projects Hero" 
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-navy/90 via-navy/70 to-navy/90"></div>
+        </div>
         
         <div className="absolute inset-0 opacity-20">
           <div className="absolute top-20 left-20 w-64 h-64 bg-orange/20 rounded-full blur-3xl"></div>
