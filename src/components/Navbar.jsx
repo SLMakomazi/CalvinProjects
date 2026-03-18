@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
-import logoCP from '../assets/logoCP.png';
+import logo from '../assets/logo.png';
+import name from '../assets/name.png';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -33,10 +34,8 @@ const Navbar = () => {
       <div className="container-custom">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center space-x-2">
-            <img src={logoCP} alt="Calvin's Projects" className="h-8 w-auto" />
-            <span className={`text-xl font-bold transition-colors duration-300 ${
-              isScrolled ? 'text-white' : 'text-white'
-            }`}>Calvin's Projects</span>
+            <img src={logo} alt="Logo" className="h-12 w-auto" />
+            <img src={name} alt="Calvin's Projects" className="h-8 w-auto" />
           </div>
 
           <div className="hidden md:flex items-center space-x-8">
