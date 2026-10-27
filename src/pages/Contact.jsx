@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { motion as Motion } from 'framer-motion';
 
 import { Mail, Phone, MapPin, Send, Clock, MessageSquare } from 'lucide-react';
 import Navbar from '../components/Navbar';
@@ -11,7 +12,7 @@ const Contact = () => {
     name: '',
     email: '',
     phone: '',
-    service: '',
+    service: new URLSearchParams(window.location.search).get('service') === 'Technology Solutions' ? 'Technology Solutions' : '',
     message: '',
   });
 
@@ -24,16 +25,9 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    // Handle form submission here
-    alert('Thank you for your message. We will get back to you soon!');
-    setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      service: '',
-      message: '',
-    });
+    const subject = encodeURIComponent(`Project enquiry: ${formData.service}`);
+    const body = encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone}\n\n${formData.message}`);
+    window.location.href = `mailto:projects@calvinsprojects.co.za?subject=${subject}&body=${body}`;
   };
 
   const contactInfo = [
@@ -66,6 +60,7 @@ const Contact = () => {
     'Development & Execution Management',
     'Project Recovery & Support',
     'Commercial & Coordination Management',
+    'Technology Solutions',
     'Other',
   ];
 
@@ -81,7 +76,7 @@ const Contact = () => {
         </div>
 
         <div className="container-custom relative z-10">
-          <motion.div
+          <Motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             className="max-w-4xl mx-auto text-center"
@@ -92,7 +87,7 @@ const Contact = () => {
             <p className="text-xl text-gray-200 max-w-3xl mx-auto">
               Ready to transform your vision into reality? Get in touch with our team today.
             </p>
-          </motion.div>
+          </Motion.div>
         </div>
       </section>
 
@@ -101,7 +96,7 @@ const Contact = () => {
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {/* Contact Form */}
-            <motion.div
+            <Motion.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               className="lg:col-span-2"
@@ -112,6 +107,7 @@ const Contact = () => {
                   <h2 className="text-2xl font-bold text-navy">Send us a Message</h2>
                 </div>
 
+                <p className="text-sm text-gray-600 mb-6">Complete the form to open your email app with the enquiry ready to send.</p>
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
@@ -203,14 +199,14 @@ const Contact = () => {
 
                   <Button type="submit" className="w-full">
                     <Send className="mr-2 w-5 h-5" />
-                    Send Message
+                    Open Email to Send
                   </Button>
                 </form>
               </Card>
-            </motion.div>
+            </Motion.div>
 
             {/* Contact Information */}
-            <motion.div
+            <Motion.div
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
               className="space-y-6"
@@ -244,7 +240,7 @@ const Contact = () => {
                   Schedule a Call
                 </Button>
               </Card>
-            </motion.div>
+            </Motion.div>
           </div>
         </div>
       </section>
@@ -252,7 +248,7 @@ const Contact = () => {
       {/* FAQ Section */}
       <section className="section-padding bg-gray-50">
         <div className="container-custom">
-          <motion.div
+          <Motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             className="text-center mb-12"
@@ -261,7 +257,7 @@ const Contact = () => {
             <p className="text-lg text-navy max-w-2xl mx-auto">
               Common questions about our services and process
             </p>
-          </motion.div>
+          </Motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
             <Card>

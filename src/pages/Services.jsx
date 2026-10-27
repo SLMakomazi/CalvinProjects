@@ -1,8 +1,9 @@
 
-import { motion } from 'framer-motion';
+import { motion as Motion } from 'framer-motion';
 import { Target, Clock, Users, Zap, Shield, TrendingUp, CheckCircle, ArrowRight, Package } from 'lucide-react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import TechnologySection from '../components/TechnologySection';
 import Button from '../components/Button';
 import Card from '../components/Card';
 
@@ -106,7 +107,7 @@ const Services = () => {
         </div>
 
         <div className="container-custom relative z-10">
-          <motion.div
+          <Motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             className="max-w-4xl mx-auto text-center"
@@ -117,7 +118,7 @@ const Services = () => {
             <p className="text-xl text-gray-200 max-w-3xl mx-auto">
               Comprehensive project delivery solutions designed to meet your unique business needs
             </p>
-          </motion.div>
+          </Motion.div>
         </div>
       </section>
 
@@ -151,10 +152,12 @@ const Services = () => {
         </div>
       </section>
 
+      <TechnologySection />
+
       {/* Process Section */}
       <section className="section-padding bg-gray-50">
         <div className="container-custom">
-          <motion.div
+          <Motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             className="text-center mb-12"
@@ -163,7 +166,7 @@ const Services = () => {
             <p className="text-lg text-navy max-w-2xl mx-auto">
               How we deliver exceptional results for every project
             </p>
-          </motion.div>
+          </Motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
             {[
@@ -172,7 +175,7 @@ const Services = () => {
               { step: '03', title: 'Execution', description: 'Implementing with precision and care' },
               { step: '04', title: 'Delivery', description: 'Ensuring successful project completion' },
             ].map((step, index) => (
-              <motion.div
+              <Motion.div
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -184,7 +187,7 @@ const Services = () => {
                 </div>
                 <h3 className="text-xl font-semibold text-navy mb-2">{step.title}</h3>
                 <p className="text-gray-600">{step.description}</p>
-              </motion.div>
+              </Motion.div>
             ))}
           </div>
         </div>
@@ -193,7 +196,7 @@ const Services = () => {
       {/* CTA Section */}
       <section className="section-padding bg-navy text-white">
         <div className="container-custom text-center">
-          <motion.div
+          <Motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             className="max-w-3xl mx-auto"
@@ -208,7 +211,7 @@ const Services = () => {
               Start Your Project
               <ArrowRight className="ml-2 w-5 h-5" />
             </Button>
-          </motion.div>
+          </Motion.div>
         </div>
       </section>
 

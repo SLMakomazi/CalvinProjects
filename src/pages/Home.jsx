@@ -1,7 +1,8 @@
-import { motion } from 'framer-motion';
+import { motion as Motion } from 'framer-motion';
 import { ArrowRight, CheckCircle, Users, Target, Zap, Building, Briefcase, HardHat, Heart, Package } from 'lucide-react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import TechnologySection from '../components/TechnologySection';
 import Button from '../components/Button';
 import Card from '../components/Card';
 import logoImage from '../assets/logo.png';
@@ -66,13 +67,13 @@ const Home = () => {
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-white/5 rounded-full blur-2xl"></div>
         </div>
 
-        <motion.div
+        <Motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           className="relative z-20 text-center text-white px-4 max-w-5xl mx-auto"
         >
-          <motion.h1
+          <Motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -81,18 +82,18 @@ const Home = () => {
             End-to-End Project Delivery.
             <br />
             <span className="text-orange">Fully Managed.</span> Fully Accountable.
-          </motion.h1>
+          </Motion.h1>
           
-          <motion.p
+          <Motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-xl md:text-2xl mb-8 text-gray-200 max-w-3xl mx-auto"
           >
-            We plan, source, and execute projects across industries — from concept to completion.
-          </motion.p>
+            We plan, source, and execute projects across industries — with technology solutions from Calvin Tech Solutions.
+          </Motion.p>
           
-          <motion.div
+          <Motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
@@ -105,14 +106,14 @@ const Home = () => {
             <Button variant="secondary" size="large" href="/services">
               Our Services
             </Button>
-          </motion.div>
-        </motion.div>
+          </Motion.div>
+        </Motion.div>
       </section>
 
       {/* Services Summary */}
       <section className="section-padding bg-gray-50">
         <div className="container-custom">
-          <motion.div
+          <Motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             className="text-center mb-12"
@@ -121,7 +122,7 @@ const Home = () => {
             <p className="text-lg text-navy max-w-2xl mx-auto">
               Comprehensive project delivery solutions tailored to your needs
             </p>
-          </motion.div>
+          </Motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {services.map((service, index) => (
@@ -135,10 +136,12 @@ const Home = () => {
         </div>
       </section>
 
+      <TechnologySection />
+
       {/* How We Work */}
       <section className="section-padding">
         <div className="container-custom">
-          <motion.div
+          <Motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             className="text-center mb-12"
@@ -147,11 +150,11 @@ const Home = () => {
             <p className="text-lg text-navy max-w-2xl mx-auto">
               Our proven methodology ensures successful project delivery
             </p>
-          </motion.div>
+          </Motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
             {howWeWork.map((step, index) => (
-              <motion.div
+              <Motion.div
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -163,7 +166,7 @@ const Home = () => {
                 </div>
                 <h3 className="text-xl font-semibold text-navy mb-2">{step.title}</h3>
                 <p className="text-gray-600">{step.description}</p>
-              </motion.div>
+              </Motion.div>
             ))}
           </div>
         </div>
@@ -172,7 +175,7 @@ const Home = () => {
       {/* Industries We Serve */}
       <section className="section-padding bg-gray-50">
         <div className="container-custom">
-          <motion.div
+          <Motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             className="text-center mb-12"
@@ -181,7 +184,7 @@ const Home = () => {
             <p className="text-lg text-navy max-w-2xl mx-auto">
               Experienced across diverse sectors with specialized expertise
             </p>
-          </motion.div>
+          </Motion.div>
 
           <div className="grid grid-cols-2 md:grid-cols-5 gap-6">
             {industries.map((industry, index) => (
@@ -198,7 +201,7 @@ const Home = () => {
       <section className="section-padding">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <motion.div
+            <Motion.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               className="order-2 lg:order-1"
@@ -224,9 +227,9 @@ const Home = () => {
                 Learn More About Us
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
-            </motion.div>
+            </Motion.div>
             
-            <motion.div
+            <Motion.div
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
               className="order-1 lg:order-2"
@@ -239,7 +242,7 @@ const Home = () => {
                   className="relative rounded-2xl shadow-2xl w-full h-96 object-cover"
                 />
               </div>
-            </motion.div>
+            </Motion.div>
           </div>
         </div>
       </section>
@@ -247,7 +250,7 @@ const Home = () => {
       {/* CTA Section */}
       <section className="section-padding bg-navy text-white">
         <div className="container-custom text-center">
-          <motion.div
+          <Motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             className="max-w-3xl mx-auto"
@@ -262,7 +265,7 @@ const Home = () => {
               Start Your Project
               <ArrowRight className="ml-2 w-5 h-5" />
             </Button>
-          </motion.div>
+          </Motion.div>
         </div>
       </section>
 

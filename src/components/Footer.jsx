@@ -6,6 +6,7 @@ const Footer = () => {
     { name: 'Home', href: '/' },
     { name: 'About', href: '/about' },
     { name: 'Services', href: '/services' },
+    { name: 'Technology', href: '/technology' },
     { name: 'Projects', href: '/projects' },
     { name: 'Contact', href: '/contact' },
   ];
@@ -15,7 +16,7 @@ const Footer = () => {
     { name: 'Talent & Resources', href: '/services' },
     { name: 'Procurement & Sourcing', href: '/services' },
     { name: 'Project Execution', href: '/services' },
-    { name: 'Special Projects', href: '/services' },
+    { name: 'Technology Solutions', href: '/technology' },
   ];
 
   const socialLinks = [

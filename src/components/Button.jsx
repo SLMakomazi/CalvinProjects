@@ -25,7 +25,7 @@ const Button = ({
 
   const classes = `${baseClasses} ${variants[variant]} ${sizes[size]} ${className}`;
 
-  const MotionComponent = motion.div;
+  const MotionComponent = motion.button;
 
   if (href) {
     return (
@@ -37,6 +37,7 @@ const Button = ({
 
   return (
     <MotionComponent
+      type="button"
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
       className={classes}

@@ -19,6 +19,7 @@ const Navbar = () => {
     { name: 'Home', href: '/' },
     { name: 'About', href: '/about' },
     { name: 'Services', href: '/services' },
+    { name: 'Technology', href: '/technology' },
     { name: 'Projects', href: '/projects' },
     { name: 'Contact', href: '/contact' },
   ];
@@ -38,7 +39,7 @@ const Navbar = () => {
             <img src={name} alt="Calvin's Projects" className="h-8 w-auto" />
           </div>
 
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-5">
             {navLinks.map((link) => (
               <a
                 key={link.name}
@@ -48,11 +49,13 @@ const Navbar = () => {
                 {link.name}
               </a>
             ))}
-            <button className="btn-primary">Start a Project</button>
+            <a href="/contact" className="btn-primary">Start a Project</a>
           </div>
 
           <button
             className="md:hidden text-white"
+            aria-label={isOpen ? 'Close navigation' : 'Open navigation'}
+            aria-expanded={isOpen}
             onClick={() => setIsOpen(!isOpen)}
           >
             {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -74,7 +77,7 @@ const Navbar = () => {
                   {link.name}
                 </a>
               ))}
-              <button className="btn-primary w-full">Start a Project</button>
+              <a href="/contact" className="btn-primary w-full block text-center">Start a Project</a>
             </div>
           </div>
         )}
